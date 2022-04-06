@@ -1,0 +1,30 @@
+
+.card{
+    width: 28.5rem;
+    height: 22vh;
+    overflow: scroll;
+    border: 0;
+
+}
+.fa-search{
+    position: relative;
+    bottom:30px;
+    left: 410px;
+    font-weight: lighter;
+    color: rgb(177, 177, 177);
+}
+.list__div{
+  cursor: pointer;
+}
+::-webkit-scrollbar{
+    background-color:white;
+    width: 5px;
+   
+  }
+  
+  ::-webkit-scrollbar-thumb{
+   
+    background-color: rgb(117, 117, 117);  
+    border-radius: 20px;
+    
+  }

@@ -1,0 +1,20 @@
+<div class="col-12 mb-1 mt-5" *ngIf="productsService.selection">
+  <span class="text-danger">{{error}}</span>
+  <select class="form-select" aria-label="Default select example" (change)="addProduct(productName.value)" #productName
+    name="productName">
+    <option disabled selected class="opacity-25 text-danger">Select or add new product</option>
+    <option value="apple">apple</option>
+    <option value="banana">banana</option>
+    <option value="cucumber">cucumber</option>
+  </select>
+</div>
+<div class="col-12 mb-1 mt-5" *ngIf="!productsService.selection">
+  <form #form="ngForm" (ngSubmit)="addProduct(form)">
+    <div class="text-danger mt-1 " [hidden]="productName.valid || productName.untouched">
+      <span *ngIf="productName.errors?.['required']">Please Enter Product</span>
+    </div>
+    <input class="form-control form-input d-inline me-1" placeholder="add new product" #productName="ngModel" ngModel
+      name="productName" required>
+    <button type="submit" [disabled]="form.invalid" class="btn-sm border-0 btn-success">Add Product</button>
+  </form>
+</div>

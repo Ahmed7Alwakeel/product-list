@@ -1,0 +1,17 @@
+<input type="text" placeholder="Search Products" class="form-control mt-2 " [(ngModel)]="search"
+  (ngModelChange)="searchProducts()">
+<i class="fa fa-search"></i>
+<div (click)="changeStatus()"  class="list__div">
+  <h6><i *ngIf="selection" class="fa fa-plus"></i>
+    <i *ngIf="!selection" class="fa fa-sort-down fs-5 me-1" ></i> 
+    {{adding}}</h6>
+  
+</div>
+<hr class="mt-3 w-100">
+<div class="card m-0 p-0">
+  <div *ngFor="let product of products">
+    <p>{{product.productName}}</p>
+  </div>
+</div>
+
+
